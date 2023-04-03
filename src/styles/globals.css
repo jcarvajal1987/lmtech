@@ -5,6 +5,11 @@
 html{
   height: 100vh;
   overflow: hidden;
+  
+  
+}
+main{
+  scroll-behavior: smooth;
 }
 body{
   height: 100%;
@@ -66,6 +71,9 @@ body{
   width: 100%;
   max-width: 768px;
   margin-top: -30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 .img-service{
   width: 100%;
@@ -74,6 +82,9 @@ body{
 }
 
 @media (min-width:768px) {
+  html{
+    font-size: 15px;
+  }
   .min-h-auto-important{
     max-height: initial!important;
   }
@@ -86,11 +97,48 @@ body{
   }
 }
 
-/* splider */
-.splide__slide{
-  display: flex;
-    flex-direction: column;
+.x{
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
+.snap{
+  scroll-snap-align: center;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+
+.items.active {
+  background: red;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+.item {
+  display: inline-block;
+  background: skyblue;
+  pointer-events: none;
+  min-height: 250px;
+  min-width: 400px;
+  margin: 2em 1em;
+  }
+
+  .splide__slide{
+    grid-template-rows: 1fr auto;
+      display: grid;
+  }
+/* splider
 
 .splide__pagination li {
   display: inline-block;
@@ -100,17 +148,27 @@ body{
   pointer-events: auto;
 }
 .splide__pagination__page {
-  background: #ccc;
+  background: #fff!important;
   border: 0;
+  color: #000!important;
   border-radius: 50%;
   display: inline-block;
-  height: 8px;
+  height: 50px!important;
   margin: 3px;
-  opacity: .7;
+  opacity: 1!important;
   padding: 0;
   position: relative;
   transition: transform .2s linear;
-  width: 8px;
+  width: 50px!important;
+  font-weight: 600;
+  font-family: '__Montserrat_8135ef', '__Montserrat_Fallback_8135ef';
+  font-size: 17px;
+}
+.splide__pagination__page.is-active {
+  transform: scale(1)!important;
+  background-color: #000!important;
+  color: #ffffff!important;
+  border-radius: 30px!important;
 }
 .splide__pagination {
   bottom: 0.5em;
@@ -122,7 +180,7 @@ body{
 }
 .splide__pagination {
   counter-reset: pagination-num;
-  top: -54px;
+  top: -106px;
   display: block!important;
 
 }
@@ -136,7 +194,7 @@ body{
 .splide__track{
   padding-left: 25%!important;
   padding-right: 25%!important;
-}
+} */
 
 .slide, .card{
   height: 100%;
@@ -147,27 +205,43 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: #8f44fd;
-  padding: 60px 40px;
-  border-radius: 10px;
+  background: #ffffff;
+  padding: 27px 55px 40px 55px;
+  border-radius: 15px;
+  
 }
 
-.material-symbols-outlined {
-  font-size: 40px;
-  background: rgb(255 255 255 / 12%);
-  border-radius: 50%;
-  padding: 16px;
+.card-title{
+  font-size: 1.6rem;
+  
+    font-weight: 700;
 }
 
-@media (max-width:920px) {
-  .splide__track{
-    padding-left: 10%!important;
-    padding-right: 10%!important;
+.ratio1-2:before {padding-top: 120%;}
+.ratio1-1:before {
+  content: "";
+  padding-top: 100%;}
+.ratio2-1:before {padding-top: 50%;}
+.ratio4-3:before {padding-top: 75%;}
+.ratio16-9:before {padding-top: 56.25%;}
+
+@media (max-width:720px) {
+  .card{
+    padding: 37px 30px 50px 30px;
   }
+  .card-title{
+    line-height: 31px;
+  }
+}
+@media (max-width:920px) {
+  
+  /* .splide__track{
+    padding-left: 7%!important;
+    padding-right: 7%!important;
+  } */
 }
 
 .espejo{
-  margin-top: 10px;
   -moz-transform: scaleY(-1);
 -o-transform: scaleY(-1);
 -webkit-transform: scaleY(-1);
@@ -175,10 +249,45 @@ transform: scaleY(-1);
 -ms-filter: "FlipV";
 filter: FlipV;
 -webkit-mask-image: linear-gradient(to bottom , transparent 70%, rgb(0 0 0 / 47%) 100%);
-  mask-image: linear-gradient(to bottom , transparent 70%, rgb(0 0 0 / 47%) 100%);
+  mask-image: linear-gradient(to bottom , transparent 70%, rgba(255, 255, 255, 0.47) 100%);
   
 }
+.espejo2{
+  -moz-transform: scaleY(-1);
+-o-transform: scaleY(-1);
+-webkit-transform: scaleY(-1);
+transform: scaleY(-1);
+-ms-filter: "FlipV";
+filter: FlipV; 
+}
 
+.mascara{
+  -webkit-mask-image: linear-gradient(to top, transparent 10%, rgb(0 0 0 / 21%) 100%);
+  mask-image: linear-gradient(to top, transparent 10%, rgba(255, 255, 255, 0.21) 100%);
+}
+
+.reflejo{
+  margin-top: 10px;
+  width: 100%;
+  height: 70px;
+  display: block;
+  background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.47) 100%);
+  border-radius: 15px;
+}
+.reflejo2{
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  display: block;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.reflejo3{
+  margin-top: 10px;
+  background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.47) 100%);
+  border-radius: 15px;
+}
 
 /* transition group */
 

@@ -1,16 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import earth1 from '../../public/earth8.jpg'
+import logo from '../../public/logo.svg'
+import icon from '../../public/lm-icon.svg'
+import purple from '../../public/purple-bottom.svg'
+import earth5 from '../../public/earth5.svg'
+import earth6 from '../../public/earth6.svg'
 // import styles from "@/components/styles/Home.module.css";
 import bg from "../../public/portada.webp";
-import bg2 from "../../public/overlay-pattern-black.png";
 import Link from "next/link";
 import { ServiceItem } from "../components/ServiceItem";
 import { BsHddNetwork} from "react-icons/bs";
 import { VscCode} from "react-icons/vsc";
 import { BiDevices} from "react-icons/bi";
-import { Carousel } from "../components/Carousel";
-import { Carousel2 } from "../components/carousel2";
+import { Footer } from "../components/Footer";
+import { CarouselNew } from "../components/CarouselNew";
+
 
 
 export default function Home() {
@@ -72,46 +76,36 @@ export default function Home() {
           }
           
         }
-        // @media (max-width: 768px) {
-        //   .bg-front::before {
-        //     content: "";
-        //     top: 0;
-        //     left: 0;
-        //     bottom: 0;
-        //     right: 0;
-        //     position: absolute;
-
-        //     background-color: hsl(0deg 0% 100% / 68%);
-        //     background-position: 77% center;
-        //     background-size: auto, cover;
-        //   }
-        // }
+        
       `}</style>
-      <section  className="bg-front grid w-full items-center ">
-        <div className="col-start-1 row-start-1 min-h-lm hidden md:block"></div>
+      <section  className="bg-front relative bg-black-1 md:bg-white grid w-full items-center ">
+        <div className="col-start-1 portrait:hidden row-start-1 min-h-lm md:block"></div>
         <div className="col-start-1 row-start-1 flex flex-1 w-full h-full flex-col">
           <div className="py-10 px-5 flex flex-1 w-full items-center  ">
             <div className="w-full md:w-10/12 m-auto">
-              <div className="md:w-8/12  md:text-black-2 text-center md:text-left">
+              <div className="md:w-8/12 text-white md:text-black-2 text-center md:text-left">
                 {/* <Image priority src="/logo.svg" fill alt="LM Tech" /> */}
-                <img className="w-3/5 m-0 hidden md:block" src="/logo.svg" alt="" />
+                <Image className="w-4/5 md:w-3/5 mb-10 mt-5 m-auto md:m-0 hidden md:block" src={logo} object-fit="fill" alt="LM Tech" /> 
+                <Image className="w-2/5 mb-10 mt-5 m-auto  block md:hidden" src={icon} object-fit="fill" alt="LM Tech" /> 
+                
+                
 
-                <h1 className=" mt-7 montserrat text-6xl font-bold leading-[-1rem] md:leading-tight tracking-tight sm:text-6xl">
+                <h1 className=" mt-7 montserrat text-4xl font-bold leading-[-1rem] md:leading-tight tracking-tight sm:text-6xl">
                   Tecnología Para <br className="block md:hidden"></br> Todos
                 </h1>
-                <p className="pt-7 montserrat text-center md:text-left leading-tight  text-xl sm:text-lg font-semibold md:pr-0 lg:pr-24">
+                <p className="pt-7 montserrat text-center md:text-left  text-xl sm:text-lg font-semibold md:pr-0 lg:pr-24 text-stone-400 md:text-black-2">
                   En LM Tech nos centramos en tu negocio y en tus necesidades de tecnología y software. Nos preocupamos
                   en ser parte de una sociedad que avanza hacia el futuro y nos encargamos de que progreses en ello.
                 </p>
                 <div className="flex-col md:flex-row m-auto md:mx-0 p-2 md:p-0 w-full flex gap-4 max-w-[400px] my-8 md:mb-0">
                   <Link
-                    href={"/contacto"}
+                    href={"/"}
                     className="font-normal text-xl rounded-md text-center px-4 py-2 w-full bg-primary text-white"
                   >
                     Cotizar
                   </Link>
                   <Link
-                    href={"/contacto"}
+                    href={"#productos"}
                     className="font-bold text-xl rounded-md text-center px-4 py-2 w-full text-primary border border-primary "
                   >
                     Productos
@@ -120,32 +114,37 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="">
-            <img className="purple-bottom" src="/purple-bottom.svg" alt="" />
+          <div className="h-[38px]">
           </div>
         </div>
+        <Image className="purple-bottom hidden md:block" src={purple} object-fit="fill" alt="LM Tech" />
+            
       </section>
 
-      <section className="flex flex-col flex-1 justify-center bg-black-1 py-20 text-white text-center">
-        <div className="py-10 px-5 flex flex-1 w-full items-center flex-col ">
-          <div className="w-full md:w-11/12 m-auto">
-            <h1 className="px-5 text-4xl font-semibold md:font-bold leading-tight  mb-4 sm:text-5xl">
+      <section id="productos" className="flex flex-col flex-1 justify-center bg-black-1 pb-0 md:py-20 text-white text-center">
+        <div className="py-10 flex flex-1 w-full items-center flex-col ">
+          <div className="w-full  px-5  md:w-11/12 m-auto">
+            <h1 className="px-5 montserrat text-4xl font-semibold md:font-bold leading-tight  mb-4 sm:text-5xl">
               Habilidades para mejorar tu Negocio
             </h1>
               <p className=" md:p-7 md:w-11/12 lg:w-10/12 m-auto  text-xl sm:text-xl font-normal text-stone-400">
-              Contamos con servicios desde la creacion e implementacion de redes y hardware, creacion de plataformas y sistemas de informacion, e integracion de nuevos desarrollos.
+              Contamos con servicios desde la creación e implementación de redes y hardware, creación de plataformas y sistemas de información, e integración de nuevos desarrollos.
               </p>
           </div>
-          <div className="w-full md:w-12/12 flex flex-row pt-5 md:pt-5 ">
+          <div className="w-full md:w-12/12 flex flex-col md:flex-row pt-5 md:pt-5 ">
+
+              <Image className=" md:hidden"  src={earth6 } object-fit="fill" alt="LM Tech" /> 
+          {/* <img src="/earth6.svg" alt="" /> */}
+
             <div className="md:w-5/12 hidden md:flex h-full relative">
               {/* <img src="/earth8.jpg" className="max-w-[500px] w-full pt-4 " alt="" /> */}
-              <Image priority src={earth1 } object-fit="fill" alt="LM Tech" /> 
+              <Image src={earth5 } object-fit="fill" alt="LM Tech" /> 
             </div>
 
          
-          <div className="w-full md:w-6/12 flex py-20 flex-col md:flex-col gap-28 md:gap-20 place-items-end">
+          <div className="w-full  px-5  md:w-6/12 flex py-20 flex-col md:flex-col gap-24 md:gap-20 place-items-end">
             <ServiceItem img="/redes.svg" title="Redes y Hardware" description="
-            El flujo de datos e informacion en los negocios es fundamental. Creamos las redes que den soporte a tus necesidades de conectividad, tanto dentro de tu negocio como hacia internet. Llevamos tu negocio a la nube.
+            El flujo de datos e información en los negocios es fundamental. Creamos las redes que den soporte a tus necesidades de conectividad, tanto dentro de tu negocio como hacia internet. Llevamos tu negocio a la nube.
             ">
               <BsHddNetwork/>
             </ServiceItem>
@@ -155,7 +154,7 @@ export default function Home() {
               <BiDevices/>
             </ServiceItem>
             <ServiceItem title="Desarrollo de Software" description="
-            Somos desarrolladores, por lo que entregamos soluciones a las problematicas que tengas mediante el desarrollo de software. Las aplicaciones web en la nube, las APIs de integracion de datos y el desarrollo Mobile son el proximo paso de tu negocio.
+            Somos desarrolladores, por lo que entregamos soluciones a las problemáticas que tengas mediante el desarrollo de software. Las aplicaciones web en la nube, las APIs de integración de datos y el desarrollo Mobile son el próximo paso para tu negocio.
             ">
               <VscCode/>
             </ServiceItem>
@@ -167,21 +166,35 @@ export default function Home() {
 
 
 
-      <section className="flex flex-col flex-1 justify-center bg-gradient-to-b from-[#B9C7CF] to-[#E5E6F9] py-20 text-black text-center">
-        <div className="py-10 px-5 flex flex-1 w-full items-center flex-col ">
+      <section className="flex flex-col flex-1 justify-center bg-gradient-to-b from-[#B9C7CF] to-[#E5E6F9] py-10 text-black text-center">
+        <div className="pt-10 px-5 flex flex-1 w-full items-center flex-col ">
           <div className="w-full md:w-11/12 m-auto">
-            <h1 className="px-5 text-4xl font-semibold md:font-bold leading-tight  mb-4 sm:text-5xl">
+            <h1 className="montserrat text-4xl font-bold leading-tight  mb-4 sm:text-5xl text-black-2 tracking-tight">
               Nuestro Proceso de Creación
             </h1>
-              <p className=" pb-7 md:p-7 md:w-11/12 lg:w-10/12 m-auto  text-xl sm:text-xl font-normal ">
+              <p className=" pb-7 md:p-7 md:w-11/12 lg:w-10/12 m-auto  text-xl sm:text-xl font-medium md:font-normal ">
               Hablemos de tus necesidades, busquemos oportunidades y hagamos crecer tu negocio con tecnología.
 
               </p>
           </div>
           
         </div>
-        <Carousel/>
+        {/* <Carousel/> */}
+        <CarouselNew/>
+        <div className="w-full max-w-[1100px] my-20 m-auto px-5">
+          <div className="bg-black-2 rounded-lg flex flex-col items-center md:flex-row justify-between text-white px-10 py-10 md:py-5 gap-4 md:gap-10 ">
+            <div className="items-center  text-3xl montserrat font-bold sm:whitespace-normal  lg:whitespace-nowrap">Nuestro Equipo</div>
+            <div className="items-center text-left">Colaboradores dispuestos a conocer y trabajar a tu lado para avanzar juntos. Nuestros líderes están dispuestos a atenderte:</div>
+            <div className="items-center flex w-full md:w-auto"><Link
+                    href={"/nosotros"}
+                    className="text-xl items-center font-semibold rounded-md text-center px-10 py-2 w-full bg-secondary text-black"
+                  >
+                    Nosotros
+                  </Link></div>
+          </div>
+        </div>
       </section>
+      <Footer/>
     </>
   );
 }

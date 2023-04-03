@@ -24,9 +24,9 @@ export const ServiceItem = ({children,title,description}:any) => {
               <p className="pt-1 flex-1  tracking-tight text-lg sm:text-lg font-normal text-stone-400">
                 {description}
               </p>
-              <div className="flex flex-col md:flex-row  md:p-0 w-full flex gap-4  mt-4">
+              <div className="flex flex-col md:flex-row  md:p-0 w-full  gap-4  mt-4">
                 <Link
-                  href={"/contacto"}
+                  href={"/"}
                   className="m-auto md:mx-0  font-normal text-xl flex items-center rounded-md  text-secondary "
                 >
                   Ver Más <span className='text-2xl pt-[2px]'><BiChevronRight/></span>
