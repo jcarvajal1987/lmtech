@@ -42,7 +42,7 @@ export const ItemCarouselNosotros = ({ children, icon, title, text, index }: any
                 <div className="md:w-5/12 lg:w-4/12 flex items-center justify-center p-10 md:p-0 ">
           <div style={{height:`${heightMenu}px`}} className="hidden md:block overflow-hidden h-full rounded-[1000px] md:rounded-none w-full border-4 md:border-[1px] border-neutral-300 max-w-[551px] espejo2">
 
-          <Image src={icon} quality={100}
+          <Image priority src={icon} quality={100}
           
           
           sizes="100vh,100vh"

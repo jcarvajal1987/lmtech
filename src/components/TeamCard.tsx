@@ -9,7 +9,8 @@ export const TeamCard = ({img,name,job}:any) => {
                 <div className="flex translate-y-[-60px] mb-[-60px]">
 
                 <div className="overflow-hidden rounded-[1000px]  w-full md:w-9/12 lg:w-10/12 m-auto border-4 border-neutral-300">
-                  <Image
+                  <Image 
+                    priority
                     src={img}
                     quality={100}
                     sizes="100vw"
