@@ -42,7 +42,7 @@ export const Navigation = () => {
 <nav className=" bg-black-1 px-4 md:px-8 lg:px-16 py-2.5 md:py-0">
   <div className="flex flex-wrap items-center justify-between">
   <Link href={"/"} prefetch={false} className="flex items-center">
-        <Image  src={logo} width={110} object-fit="fill" alt="LM Tech" /> 
+        <Image priority src={logo} width={110} object-fit="fill" alt="LM Tech" /> 
 
 </Link>
     

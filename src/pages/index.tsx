@@ -117,7 +117,7 @@ export default function Home() {
           <div className="h-[38px]">
           </div>
         </div>
-        <Image className="purple-bottom hidden md:block" src={purple} object-fit="fill" alt="LM Tech" />
+        <Image priority className="purple-bottom hidden md:block" src={purple} object-fit="fill" alt="LM Tech" />
             
       </section>
 
