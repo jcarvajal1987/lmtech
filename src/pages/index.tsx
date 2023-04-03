@@ -85,8 +85,8 @@ export default function Home() {
             <div className="w-full md:w-10/12 m-auto">
               <div className="md:w-8/12 text-white md:text-black-2 text-center md:text-left">
                 {/* <Image priority src="/logo.svg" fill alt="LM Tech" /> */}
-                <Image className="w-4/5 md:w-3/5 mb-10 mt-5 m-auto md:m-0 hidden md:block" src={logo} object-fit="fill" alt="LM Tech" /> 
-                <Image className="w-2/5 mb-10 mt-5 m-auto  block md:hidden" src={icon} object-fit="fill" alt="LM Tech" /> 
+                <Image priority className="w-4/5 md:w-3/5 mb-10 mt-5 m-auto md:m-0 hidden md:block" src={logo} object-fit="fill" alt="LM Tech" /> 
+                <Image priority className="w-2/5 mb-10 mt-5 m-auto  block md:hidden" src={icon} object-fit="fill" alt="LM Tech" /> 
                 
                 
 
@@ -136,9 +136,9 @@ export default function Home() {
               <Image className=" md:hidden"  src={earth6 } object-fit="fill" alt="LM Tech" /> 
           {/* <img src="/earth6.svg" alt="" /> */}
 
-            <div className="md:w-5/12 hidden md:flex h-full relative">
+            <div  className="md:w-5/12 hidden md:flex h-full relative">
               {/* <img src="/earth8.jpg" className="max-w-[500px] w-full pt-4 " alt="" /> */}
-              <Image src={earth5 } object-fit="fill" alt="LM Tech" /> 
+              <Image priority src={earth5 } object-fit="fill" alt="LM Tech" /> 
             </div>
 
          
